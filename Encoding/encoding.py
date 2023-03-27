@@ -15,7 +15,7 @@ files =[
 def pipeline(filename):
     data = eu.getData(filename)
     # data = cleanColumns(filename, data)
-    x_data = eu.getX(filename, data)
+    x_data = eu.getX(data)
     nf, cf = eu.devideFeatures(x_data)
     eu.printFeatures(data, nf, cf)
     x_data, n_data, c_data = eu.xEncoding(x_data, nf, cf)

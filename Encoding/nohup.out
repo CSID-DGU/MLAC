@@ -1,0 +1,144 @@
+######### All Columns #########
+Total Column lenth : 80
+Index(['protocol', 'flow_duration', 'tot_fwd_pkts', 'tot_bwd_pkts',
+       'tot_len_fwd_pkts', 'tot_len_bwd_pkts', 'fwd_pkt_len_max',
+       'fwd_pkt_len_min', 'fwd_pkt_len_mean', 'fwd_pkt_len_std',
+       'bwd_pkt_len_max', 'bwd_pkt_len_min', 'bwd_pkt_len_mean',
+       'bwd_pkt_len_std', 'flow_byts_s', 'flow_pkts_s', 'flow_iat_mean',
+       'flow_iat_std', 'flow_iat_max', 'flow_iat_min', 'fwd_iat_tot',
+       'fwd_iat_mean', 'fwd_iat_std', 'fwd_iat_max', 'fwd_iat_min',
+       'bwd_iat_tot', 'bwd_iat_mean', 'bwd_iat_std', 'bwd_iat_max',
+       'bwd_iat_min', 'fwd_psh_flags', 'bwd_psh_flags', 'fwd_urg_flags',
+       'bwd_urg_flags', 'fwd_header_len', 'bwd_header_len', 'fwd_pkts_s',
+       'bwd_pkts_s', 'pkt_len_min', 'pkt_len_max', 'pkt_len_mean',
+       'pkt_len_std', 'pkt_len_var', 'fin_flag_cnt', 'syn_flag_cnt',
+       'rst_flag_cnt', 'psh_flag_cnt', 'ack_flag_cnt', 'urg_flag_cnt',
+       'cwe_flag_count', 'ece_flag_cnt', 'down_up_ratio', 'pkt_size_avg',
+       'fwd_seg_size_avg', 'bwd_seg_size_avg', 'fwd_byts_b_avg',
+       'fwd_header_length', 'fwd_pkts_b_avg', 'fwd_blk_rate_avg',
+       'bwd_byts_b_avg', 'bwd_pkts_b_avg', 'bwd_blk_rate_avg',
+       'subflow_fwd_pkts', 'subflow_fwd_byts', 'subflow_bwd_pkts',
+       'subflow_bwd_byts', 'init_fwd_win_byts', 'init_bwd_win_byts',
+       'fwd_act_data_pkts', 'fwd_seg_size_min', 'active_mean', 'active_std',
+       'active_max', 'active_min', 'idle_mean', 'idle_std', 'idle_max',
+       'idle_min', 'attack_category', 'label'],
+      dtype='object')
+######### Numeric Columns #########
+Numeric Column lenth : 78
+['protocol', 'flow_duration', 'tot_fwd_pkts', 'tot_bwd_pkts', 'tot_len_fwd_pkts', 'tot_len_bwd_pkts', 'fwd_pkt_len_max', 'fwd_pkt_len_min', 'fwd_pkt_len_mean', 'fwd_pkt_len_std', 'bwd_pkt_len_max', 'bwd_pkt_len_min', 'bwd_pkt_len_mean', 'bwd_pkt_len_std', 'flow_byts_s', 'flow_pkts_s', 'flow_iat_mean', 'flow_iat_std', 'flow_iat_max', 'flow_iat_min', 'fwd_iat_tot', 'fwd_iat_mean', 'fwd_iat_std', 'fwd_iat_max', 'fwd_iat_min', 'bwd_iat_tot', 'bwd_iat_mean', 'bwd_iat_std', 'bwd_iat_max', 'bwd_iat_min', 'fwd_psh_flags', 'bwd_psh_flags', 'fwd_urg_flags', 'bwd_urg_flags', 'fwd_header_len', 'bwd_header_len', 'fwd_pkts_s', 'bwd_pkts_s', 'pkt_len_min', 'pkt_len_max', 'pkt_len_mean', 'pkt_len_std', 'pkt_len_var', 'fin_flag_cnt', 'syn_flag_cnt', 'rst_flag_cnt', 'psh_flag_cnt', 'ack_flag_cnt', 'urg_flag_cnt', 'cwe_flag_count', 'ece_flag_cnt', 'down_up_ratio', 'pkt_size_avg', 'fwd_seg_size_avg', 'bwd_seg_size_avg', 'fwd_byts_b_avg', 'fwd_header_length', 'fwd_pkts_b_avg', 'fwd_blk_rate_avg', 'bwd_byts_b_avg', 'bwd_pkts_b_avg', 'bwd_blk_rate_avg', 'subflow_fwd_pkts', 'subflow_fwd_byts', 'subflow_bwd_pkts', 'subflow_bwd_byts', 'init_fwd_win_byts', 'init_bwd_win_byts', 'fwd_act_data_pkts', 'fwd_seg_size_min', 'active_mean', 'active_std', 'active_max', 'active_min', 'idle_mean', 'idle_std', 'idle_max', 'idle_min']
+######### Categorical Columns #########
+Categorical Column lenth : 0
+[]
+######### All Columns #########
+Total Column lenth : 44
+Index(['unnamed_0_1', 'proto', 'state', 'dur', 'sbytes', 'dbytes', 'sttl',
+       'dttl', 'sloss', 'dloss', 'service', 'sload', 'dload', 'spkts', 'dpkts',
+       'swin', 'dwin', 'stcpb', 'dtcpb', 'smeansz', 'dmeansz', 'trans_depth',
+       'res_bdy_len', 'sjit', 'djit', 'sintpkt', 'dintpkt', 'tcprtt', 'synack',
+       'ackdat', 'is_sm_ips_ports', 'ct_state_ttl', 'ct_flw_http_mthd',
+       'is_ftp_login', 'ct_ftp_cmd', 'ct_srv_src', 'ct_srv_dst', 'ct_dst_ltm',
+       'ct_src_ltm', 'ct_src_dport_ltm', 'ct_dst_sport_ltm', 'ct_dst_src_ltm',
+       'attack_category', 'label'],
+      dtype='object')
+######### Numeric Columns #########
+Numeric Column lenth : 39
+['unnamed_0_1', 'dur', 'sbytes', 'dbytes', 'sttl', 'dttl', 'sloss', 'dloss', 'sload', 'dload', 'spkts', 'dpkts', 'swin', 'dwin', 'stcpb', 'dtcpb', 'smeansz', 'dmeansz', 'trans_depth', 'res_bdy_len', 'sjit', 'djit', 'sintpkt', 'dintpkt', 'tcprtt', 'synack', 'ackdat', 'is_sm_ips_ports', 'ct_state_ttl', 'ct_flw_http_mthd', 'is_ftp_login', 'ct_ftp_cmd', 'ct_srv_src', 'ct_srv_dst', 'ct_dst_ltm', 'ct_src_ltm', 'ct_src_dport_ltm', 'ct_dst_sport_ltm', 'ct_dst_src_ltm']
+######### Categorical Columns #########
+Categorical Column lenth : 3
+['proto', 'state', 'service']
+######### All Columns #########
+Total Column lenth : 79
+Index(['protocol', 'flow_duration', 'tot_fwd_pkts', 'tot_bwd_pkts',
+       'tot_len_fwd_pkts', 'tot_len_bwd_pkts', 'fwd_pkt_len_max',
+       'fwd_pkt_len_min', 'fwd_pkt_len_mean', 'fwd_pkt_len_std',
+       'bwd_pkt_len_max', 'bwd_pkt_len_min', 'bwd_pkt_len_mean',
+       'bwd_pkt_len_std', 'flow_byts_s', 'flow_pkts_s', 'flow_iat_mean',
+       'flow_iat_std', 'flow_iat_max', 'flow_iat_min', 'fwd_iat_tot',
+       'fwd_iat_mean', 'fwd_iat_std', 'fwd_iat_max', 'fwd_iat_min',
+       'bwd_iat_tot', 'bwd_iat_mean', 'bwd_iat_std', 'bwd_iat_max',
+       'bwd_iat_min', 'fwd_psh_flags', 'bwd_psh_flags', 'fwd_urg_flags',
+       'bwd_urg_flags', 'fwd_header_len', 'bwd_header_len', 'fwd_pkts_s',
+       'bwd_pkts_s', 'pkt_len_min', 'pkt_len_max', 'pkt_len_mean',
+       'pkt_len_std', 'pkt_len_var', 'fin_flag_cnt', 'syn_flag_cnt',
+       'rst_flag_cnt', 'psh_flag_cnt', 'ack_flag_cnt', 'urg_flag_cnt',
+       'cwe_flag_count', 'ece_flag_cnt', 'down_up_ratio', 'pkt_size_avg',
+       'fwd_seg_size_avg', 'bwd_seg_size_avg', 'fwd_byts_b_avg',
+       'fwd_pkts_b_avg', 'fwd_blk_rate_avg', 'bwd_byts_b_avg',
+       'bwd_pkts_b_avg', 'bwd_blk_rate_avg', 'subflow_fwd_pkts',
+       'subflow_fwd_byts', 'subflow_bwd_pkts', 'subflow_bwd_byts',
+       'init_fwd_win_byts', 'init_bwd_win_byts', 'fwd_act_data_pkts',
+       'fwd_seg_size_min', 'active_mean', 'active_std', 'active_max',
+       'active_min', 'idle_mean', 'idle_std', 'idle_max', 'idle_min',
+       'attack_category', 'label'],
+      dtype='object')
+######### Numeric Columns #########
+Numeric Column lenth : 77
+['protocol', 'flow_duration', 'tot_fwd_pkts', 'tot_bwd_pkts', 'tot_len_fwd_pkts', 'tot_len_bwd_pkts', 'fwd_pkt_len_max', 'fwd_pkt_len_min', 'fwd_pkt_len_mean', 'fwd_pkt_len_std', 'bwd_pkt_len_max', 'bwd_pkt_len_min', 'bwd_pkt_len_mean', 'bwd_pkt_len_std', 'flow_byts_s', 'flow_pkts_s', 'flow_iat_mean', 'flow_iat_std', 'flow_iat_max', 'flow_iat_min', 'fwd_iat_tot', 'fwd_iat_mean', 'fwd_iat_std', 'fwd_iat_max', 'fwd_iat_min', 'bwd_iat_tot', 'bwd_iat_mean', 'bwd_iat_std', 'bwd_iat_max', 'bwd_iat_min', 'fwd_psh_flags', 'bwd_psh_flags', 'fwd_urg_flags', 'bwd_urg_flags', 'fwd_header_len', 'bwd_header_len', 'fwd_pkts_s', 'bwd_pkts_s', 'pkt_len_min', 'pkt_len_max', 'pkt_len_mean', 'pkt_len_std', 'pkt_len_var', 'fin_flag_cnt', 'syn_flag_cnt', 'rst_flag_cnt', 'psh_flag_cnt', 'ack_flag_cnt', 'urg_flag_cnt', 'cwe_flag_count', 'ece_flag_cnt', 'down_up_ratio', 'pkt_size_avg', 'fwd_seg_size_avg', 'bwd_seg_size_avg', 'fwd_byts_b_avg', 'fwd_pkts_b_avg', 'fwd_blk_rate_avg', 'bwd_byts_b_avg', 'bwd_pkts_b_avg', 'bwd_blk_rate_avg', 'subflow_fwd_pkts', 'subflow_fwd_byts', 'subflow_bwd_pkts', 'subflow_bwd_byts', 'init_fwd_win_byts', 'init_bwd_win_byts', 'fwd_act_data_pkts', 'fwd_seg_size_min', 'active_mean', 'active_std', 'active_max', 'active_min', 'idle_mean', 'idle_std', 'idle_max', 'idle_min']
+######### Categorical Columns #########
+Categorical Column lenth : 0
+[]
+######### All Columns #########
+Total Column lenth : 44
+Index(['unnamed_0_1', 'proto', 'state', 'dur', 'sbytes', 'dbytes', 'sttl',
+       'dttl', 'sloss', 'dloss', 'service', 'sload', 'dload', 'spkts', 'dpkts',
+       'swin', 'dwin', 'stcpb', 'dtcpb', 'smeansz', 'dmeansz', 'trans_depth',
+       'res_bdy_len', 'sjit', 'djit', 'sintpkt', 'dintpkt', 'tcprtt', 'synack',
+       'ackdat', 'is_sm_ips_ports', 'ct_state_ttl', 'ct_flw_http_mthd',
+       'is_ftp_login', 'ct_ftp_cmd', 'ct_srv_src', 'ct_srv_dst', 'ct_dst_ltm',
+       'ct_src_ltm', 'ct_src_dport_ltm', 'ct_dst_sport_ltm', 'ct_dst_src_ltm',
+       'attack_category', 'label'],
+      dtype='object')
+######### Numeric Columns #########
+Numeric Column lenth : 39
+['unnamed_0_1', 'dur', 'sbytes', 'dbytes', 'sttl', 'dttl', 'sloss', 'dloss', 'sload', 'dload', 'spkts', 'dpkts', 'swin', 'dwin', 'stcpb', 'dtcpb', 'smeansz', 'dmeansz', 'trans_depth', 'res_bdy_len', 'sjit', 'djit', 'sintpkt', 'dintpkt', 'tcprtt', 'synack', 'ackdat', 'is_sm_ips_ports', 'ct_state_ttl', 'ct_flw_http_mthd', 'is_ftp_login', 'ct_ftp_cmd', 'ct_srv_src', 'ct_srv_dst', 'ct_dst_ltm', 'ct_src_ltm', 'ct_src_dport_ltm', 'ct_dst_sport_ltm', 'ct_dst_src_ltm']
+######### Categorical Columns #########
+Categorical Column lenth : 3
+['proto', 'state', 'service']
+######### All Columns #########
+Total Column lenth : 79
+Index(['protocol', 'flow_duration', 'tot_fwd_pkts', 'tot_bwd_pkts',
+       'tot_len_fwd_pkts', 'tot_len_bwd_pkts', 'fwd_pkt_len_max',
+       'fwd_pkt_len_min', 'fwd_pkt_len_mean', 'fwd_pkt_len_std',
+       'bwd_pkt_len_max', 'bwd_pkt_len_min', 'bwd_pkt_len_mean',
+       'bwd_pkt_len_std', 'flow_byts_s', 'flow_pkts_s', 'flow_iat_mean',
+       'flow_iat_std', 'flow_iat_max', 'flow_iat_min', 'fwd_iat_tot',
+       'fwd_iat_mean', 'fwd_iat_std', 'fwd_iat_max', 'fwd_iat_min',
+       'bwd_iat_tot', 'bwd_iat_mean', 'bwd_iat_std', 'bwd_iat_max',
+       'bwd_iat_min', 'fwd_psh_flags', 'bwd_psh_flags', 'fwd_urg_flags',
+       'bwd_urg_flags', 'fwd_header_len', 'bwd_header_len', 'fwd_pkts_s',
+       'bwd_pkts_s', 'pkt_len_min', 'pkt_len_max', 'pkt_len_mean',
+       'pkt_len_std', 'pkt_len_var', 'fin_flag_cnt', 'syn_flag_cnt',
+       'rst_flag_cnt', 'psh_flag_cnt', 'ack_flag_cnt', 'urg_flag_cnt',
+       'cwe_flag_count', 'ece_flag_cnt', 'down_up_ratio', 'pkt_size_avg',
+       'fwd_seg_size_avg', 'bwd_seg_size_avg', 'fwd_byts_b_avg',
+       'fwd_pkts_b_avg', 'fwd_blk_rate_avg', 'bwd_byts_b_avg',
+       'bwd_pkts_b_avg', 'bwd_blk_rate_avg', 'subflow_fwd_pkts',
+       'subflow_fwd_byts', 'subflow_bwd_pkts', 'subflow_bwd_byts',
+       'init_fwd_win_byts', 'init_bwd_win_byts', 'fwd_act_data_pkts',
+       'fwd_seg_size_min', 'active_mean', 'active_std', 'active_max',
+       'active_min', 'idle_mean', 'idle_std', 'idle_max', 'idle_min',
+       'attack_category', 'label'],
+      dtype='object')
+######### Numeric Columns #########
+Numeric Column lenth : 77
+['protocol', 'flow_duration', 'tot_fwd_pkts', 'tot_bwd_pkts', 'tot_len_fwd_pkts', 'tot_len_bwd_pkts', 'fwd_pkt_len_max', 'fwd_pkt_len_min', 'fwd_pkt_len_mean', 'fwd_pkt_len_std', 'bwd_pkt_len_max', 'bwd_pkt_len_min', 'bwd_pkt_len_mean', 'bwd_pkt_len_std', 'flow_byts_s', 'flow_pkts_s', 'flow_iat_mean', 'flow_iat_std', 'flow_iat_max', 'flow_iat_min', 'fwd_iat_tot', 'fwd_iat_mean', 'fwd_iat_std', 'fwd_iat_max', 'fwd_iat_min', 'bwd_iat_tot', 'bwd_iat_mean', 'bwd_iat_std', 'bwd_iat_max', 'bwd_iat_min', 'fwd_psh_flags', 'bwd_psh_flags', 'fwd_urg_flags', 'bwd_urg_flags', 'fwd_header_len', 'bwd_header_len', 'fwd_pkts_s', 'bwd_pkts_s', 'pkt_len_min', 'pkt_len_max', 'pkt_len_mean', 'pkt_len_std', 'pkt_len_var', 'fin_flag_cnt', 'syn_flag_cnt', 'rst_flag_cnt', 'psh_flag_cnt', 'ack_flag_cnt', 'urg_flag_cnt', 'cwe_flag_count', 'ece_flag_cnt', 'down_up_ratio', 'pkt_size_avg', 'fwd_seg_size_avg', 'bwd_seg_size_avg', 'fwd_byts_b_avg', 'fwd_pkts_b_avg', 'fwd_blk_rate_avg', 'bwd_byts_b_avg', 'bwd_pkts_b_avg', 'bwd_blk_rate_avg', 'subflow_fwd_pkts', 'subflow_fwd_byts', 'subflow_bwd_pkts', 'subflow_bwd_byts', 'init_fwd_win_byts', 'init_bwd_win_byts', 'fwd_act_data_pkts', 'fwd_seg_size_min', 'active_mean', 'active_std', 'active_max', 'active_min', 'idle_mean', 'idle_std', 'idle_max', 'idle_min']
+######### Categorical Columns #########
+Categorical Column lenth : 0
+[]
+######### All Columns #########
+Total Column lenth : 44
+Index(['unnamed_0_1', 'proto', 'state', 'dur', 'sbytes', 'dbytes', 'sttl',
+       'dttl', 'sloss', 'dloss', 'service', 'sload', 'dload', 'spkts', 'dpkts',
+       'swin', 'dwin', 'stcpb', 'dtcpb', 'smeansz', 'dmeansz', 'trans_depth',
+       'res_bdy_len', 'sjit', 'djit', 'sintpkt', 'dintpkt', 'tcprtt', 'synack',
+       'ackdat', 'is_sm_ips_ports', 'ct_state_ttl', 'ct_flw_http_mthd',
+       'is_ftp_login', 'ct_ftp_cmd', 'ct_srv_src', 'ct_srv_dst', 'ct_dst_ltm',
+       'ct_src_ltm', 'ct_src_dport_ltm', 'ct_dst_sport_ltm', 'ct_dst_src_ltm',
+       'attack_category', 'label'],
+      dtype='object')
+######### Numeric Columns #########
+Numeric Column lenth : 39
+['unnamed_0_1', 'dur', 'sbytes', 'dbytes', 'sttl', 'dttl', 'sloss', 'dloss', 'sload', 'dload', 'spkts', 'dpkts', 'swin', 'dwin', 'stcpb', 'dtcpb', 'smeansz', 'dmeansz', 'trans_depth', 'res_bdy_len', 'sjit', 'djit', 'sintpkt', 'dintpkt', 'tcprtt', 'synack', 'ackdat', 'is_sm_ips_ports', 'ct_state_ttl', 'ct_flw_http_mthd', 'is_ftp_login', 'ct_ftp_cmd', 'ct_srv_src', 'ct_srv_dst', 'ct_dst_ltm', 'ct_src_ltm', 'ct_src_dport_ltm', 'ct_dst_sport_ltm', 'ct_dst_src_ltm']
+######### Categorical Columns #########
+Categorical Column lenth : 3
+['proto', 'state', 'service']

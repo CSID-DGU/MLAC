@@ -49,7 +49,7 @@ getXdata - Drop label & attack_category
 input : file name & dataframe
 output : x_data frame
 """
-def getX(file, data):
+def getX(data):
     x_data = data.drop(['label','attack_category'], axis=1)
     return x_data
 
