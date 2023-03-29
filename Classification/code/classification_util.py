@@ -28,18 +28,20 @@ Input : type(binary VS multiclass)
 Ouput : X_train, X_test, y_train, y_test set
 Bring Preprocessed Data
 """
-def getData(type, file):
-    data = pd.read_csv('/home/irteam/wendyunji-dcloud-dir/wendyunji/MLAC/Dataset/Preprocessed/'+file+'.csv')
-    if 'attack_cat' in data.columns:
-         data = data.rename(columns={'attack_cat':'attack_category'}) 
-    if type == 'B':
-        target = data['label']
-    else:
+def TrainTestSplit(data):
+    #data = pd.read_csv('/home/irteam/wendyunji-dcloud-dir/wendyunji/MLAC/Dataset/Preprocessed/'+file+'.csv')
+    # if 'attack_cat' in data.columns:
+    #      data = data.rename(columns={'attack_cat':'attack_category'}) 
+    # if type == 'B':
+    #     target = data['label']
+    #else:
         # Remove Benign Data
-        benign = data[data['label'] == 0].index
-        data.drop(benign, inplace=True)
-        target = data['attack_category']
-    data.drop(labels=['label','attack_category'], axis=1, inplace=True)
+        # benign = data[data['label'] == 0].index
+        # data.drop(benign, inplace=True)
+        # target = data['attack_category']
+    target = data['attack_category']
+    data.drop(labels=['attack_category'], axis=1, inplace=True)
+    # data.drop(labels=['label','attack_category'], axis=1, inplace=True)
     X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.3, shuffle=True, stratify=target, random_state=34)
     return X_train, X_test, y_train, y_test
 
@@ -125,9 +127,9 @@ def MultiClassification(file, models, X_train, X_test, y_train, y_test):
         accuracy.loc[cnt] = [name, acc, f1_mi, f1_ma, f1_we, recall_mi, recall_ma, recall_we, precision_mi, precision_ma, precision_we, delta]
         print('{}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.2f} secs'.format(name, acc, f1_mi, recall_mi, precision_mi, f1_ma, recall_ma, precision_ma, f1_we, recall_we, precision_we, delta))
         cnt += 1
-        matrix = open('/home/irteam/wendyunji-dcloud-dir/wendyunji/MLAC/Classification/Evaluation/Multi/Matrix/'+file+'_'+name+'.txt','w')
+        matrix = open('/home/irteam/wendyunji-dcloud-dir/wendyunji/2023-1/MLAC/Classification/result/230330/matrix/'+file+'_'+name+'.txt','w')
         matrix.write(str(confusion))            
     accuracy = accuracy.round(3)
-    accuracy.to_csv('/home/irteam/wendyunji-dcloud-dir/wendyunji/MLAC/Classification/Evaluation/Multi/'+file+'.csv',index=False)
+    accuracy.to_csv('/home/irteam/wendyunji-dcloud-dir/wendyunji/2023-1/MLAC/Classification/result/230330/'+file+'.csv',index=False)
 
     

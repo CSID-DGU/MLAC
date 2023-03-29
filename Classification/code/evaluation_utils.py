@@ -10,13 +10,14 @@ def CMtoList(txt):
     matrix = []
     lines = f.readlines()
 
-    for i in range(len(lines)):
+    for i in range(len(lines)-1):
         row = []
-
+        line = lines[i]+lines[i+1]
+        i += 1
         # 공백 및 불필요한 문자들 제거하여 각 숫자를 문자열로 저장 --> 나중에는 정규 표현식 써서 코드를 줄일 수 있도록!
-        line = lines[i].replace('[','')
+        line = line.replace('[','')
         line = line.replace(']','')
-        line = line.replace('\n','')
+        line = line.replace('\n','\t')
         line = line.replace('     ','\t')
         line = line.replace('    ','\t')
         line = line.replace('   ','\t')
@@ -25,7 +26,7 @@ def CMtoList(txt):
         row = line.split('\t')
         for _ in range(20):
             if '' in row : row.remove('')
-
+        #print(row)
         # 문자를 숫자로 변환
         row = list(map(int, row))
         matrix.append(row)
@@ -63,23 +64,28 @@ def BinaryFPR(list):
 출력 : class 별 precision, recall, f1 score, FPR
 """
 import numpy as np
-def MultiMetric(list):
-    f = open('/home/irteam/wendyunji-dcloud-dir/wendyunji/MLAC/Classification/asdlkfj.txt','a')
+def MultiMetric(f, list):
+    print(list)
+    #print(list)
+    # f = open('/home/irteam/wendyunji-dcloud-dir/wendyunji/2023-1/MLAC/Classification/result/230330/attackpereval.txt','a')
+    #print(len(list))
+    #print(len(list[:][0]))
     list = np.array(list)
-
     # for i in range(len(list)):
-    for i in range(1):
+    for i in range(len(list[:][0])-1):
         # print('class '+str(i),end=' : ')
         tp = list[i][i]
 
         tn = -tp
-        for j in range(len(list)):
+        for j in range(len(list[:][0])-1):
             tn += list[j][j]
 
         fp = list.sum(axis=0)[i]-tp
-
-        fn = list.sum()-tp-tn-fp
-        # print(tp, tn, fp, fn)
+        sumval = list.sum()
+        sumval = np.array(sumval)
+        fn = sumval.sum()-tp-tn-fp
+        
+        print(tp, tn, fp, fn)
         acc = (tp+tn) / (tp+fp+tn+fn)
         precision = tp /(tp+fp)
         recall = tp / (tp+fn)
