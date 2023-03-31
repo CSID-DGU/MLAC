@@ -1,0 +1,24 @@
+Attack,Acc,F1,Recall,Precision,FPR
+Analysis,0.9965,,0.0,,0.0
+Backdoor,0.997,,0.0,,0.0
+Bot,0.9984,,0.0,,0.0
+DDoS,0.999,0.996,0.999,0.993,0.001
+DoS,0.9789,0.0125,0.0063,0.4844,0.0001
+DoS GoldenEye,0.9925,0.7175,0.8379,0.6273,0.0057
+DoS Slowhttptest,0.989,0.9729,0.9473,1.0,0.0
+DoS slowloris,0.9657,0.3942,0.9762,0.247,0.0344
+Dos Hulk,0.9895,0.1249,0.0666,1.0,0.0
+Exploits,0.9138,0.567,0.9806,0.3988,0.0902
+FTP-Patator,0.9948,,0.0,,0.0
+Fuzzers,0.9692,0.0322,0.0164,1.0,0.0
+Generic,0.9927,0.9868,0.9739,1.0,0.0
+Heartbleed,1.0,,0.0,,0.0
+Infiltration,0.9999,,0.0,,0.0
+PortScan,0.9982,0.9956,0.9913,1.0,0.0
+Reconnaissance,0.9819,,0.0,0.0,0.0
+SSH-Patator,0.9961,,0.0,,0.0
+Shellcode,0.998,,0.0,,0.0
+Web Attack – Brute Force,0.9982,,0.0,,0.0
+Web Attack – Sql Injection,1.0,,0.0,,0.0
+Web Attack – XSS,0.9992,,0.0,,0.0
+Worms,0.9998,,0.0,,0.0
