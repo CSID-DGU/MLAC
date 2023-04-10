@@ -23,24 +23,20 @@ import os
 
 # 전처리
 # Get Dataset
-file = [
-    'CICItoCICI',
-    #'CICItoUNSW',
-    #'UNSWtoUNSW',
-    #'UNSWtoCICI',
-    #'MergedCICI',
-    #'MergedUNSW'
-]
+files={
+    'CICI':'/home/irteam/junghye-dcloud-dir/MLAC/data/encoded_ConcatedCICI.csv',
+    'UNSW': '/home/irteam/junghye-dcloud-dir/MLAC/data/encoded_ConcatedUNSW.csv'
+}
 
-data = pd.read_csv('/home/wendyunji/MLAC_steps/ProcessedDataset/'+file[0]+'.csv')
+data = pd.read_csv(files['CICI'])
 #target = data['attack_category']
 binary_target=data['label']
 multiclass_labels_1=data['nist_category']
 multiclass_labels_2=data['attack_category']
-class_1_data=data[[data['nist_category']==1]]
-class_2_data=data[[data['nist_cateogry']==2]]
-class_3_data=data[[data['nist_cateogry']==3]]
-class_4_data=data[[data['nist_cateogry']==4]]
+class_1_data=data[data['nist_category']==0]
+class_2_data=data[data['nist_cateogory']==1]
+class_3_data=data[data['nist_category']==2]
+class_4_data=data[data['nist_category']==3]
 data=data.drop(labels=['label','attack_category','nist_category'],axis=1)
 
 
@@ -88,8 +84,8 @@ for name, model in models:
     model_eval.append(acc)
     model_eval.append(recall_ma)
 
-    cm_1=confusion_matrix(y_test,binary_pred)
-    cm_df_1=pd.DataFrame(cm_1,index=binary_target,columns=binary_target)
+    #cm_1=confusion_matrix(y_test,binary_pred)
+    #cm_df_1=pd.DataFrame(cm_1,index=binary_target,columns=binary_target)
     #cm_df_1.to_csv(os.path.join(outpath,'binary'),index=True,header=True)
 
     # malicious index 추출
@@ -111,8 +107,8 @@ for name, model in models:
     recall_ma = recall_score(y_test[malicious_indices], multiclass_pred_1, average='macro')
     model_eval.append(acc)
     model_eval.append(recall_ma)
-    cm_2=confusion_matrix(y_test[malicious_indices],multiclass_pred_1)
-    cm_df_2=pd.DataFrame(cm_2,index=multiclass_labels_1,columns=multiclass_labels_1)
+    #cm_2=confusion_matrix(y_test[malicious_indices],multiclass_pred_1)
+    #cm_df_2=pd.DataFrame(cm_2,index=multiclass_labels_1,columns=multiclass_labels_1)
     #cm_df_2.to_csv(os.path.join(outpath,'4class'),index=True,header=True)
 
 
