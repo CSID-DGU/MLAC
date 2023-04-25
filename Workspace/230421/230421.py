@@ -1,20 +1,20 @@
 import pandas as pd
 
-ConcatedCICI = pd.read_csv('/home/irteam/wendyunji-dcloud-dir/wendyunji/Dataset/MLAC-dataset/encoded_ConcatedCICI.csv')
 #ConcatedUNSW = pd.read_csv('/home/irteam/wendyunji-dcloud-dir/wendyunji/Dataset/MLAC-dataset/encoded_ConcatedUNSW.csv')
+ConcatedUNSW = pd.read_csv('/home/irteam/wendyunji-dcloud-dir/wendyunji/Dataset/MLAC-dataset/encoded_ConcatedUNSW.csv')
 
-del ConcatedCICI['protocol']
-del ConcatedCICI['fwd_psh_flags']
-del ConcatedCICI['bwd_psh_flags']
-del ConcatedCICI['urg_flag_cnt']
-del ConcatedCICI['fwd_byts_b_avg']
-del ConcatedCICI['init_fwd_win_byts']
-del ConcatedCICI['fwd_seg_size_min']
+del ConcatedUNSW['protocol']
+del ConcatedUNSW['fwd_psh_flags']
+del ConcatedUNSW['bwd_psh_flags']
+del ConcatedUNSW['urg_flag_cnt']
+del ConcatedUNSW['fwd_byts_b_avg']
+del ConcatedUNSW['init_fwd_win_byts']
+del ConcatedUNSW['fwd_seg_size_min']
 
 import classification_util2 as Cutils
 
-files = ['ConcatedCICI']
-datas = [ConcatedCICI]
+files = ['ConcatedUNSW']
+datas = [ConcatedUNSW]
 
 def Cpipeline(file, data):
     X_train, X_test, y_train, y_test = Cutils.TrainTestSplit(data)

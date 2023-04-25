@@ -38,11 +38,11 @@ X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.3,
 models = []
 models.append(('RF', RandomForestClassifier(max_depth=5, n_estimators=5, max_features=3)))    
 models.append(('CART', DecisionTreeClassifier(max_depth=5)))
-models.append(('NB', GaussianNB()))
-models.append(('LDA', LinearDiscriminantAnalysis()))
-models.append(('QDA', QuadraticDiscriminantAnalysis()))
+#models.append(('NB', GaussianNB()))
+#models.append(('LDA', LinearDiscriminantAnalysis()))
+#models.append(('QDA', QuadraticDiscriminantAnalysis()))
 models.append(('LR', LogisticRegression(solver='lbfgs', max_iter=200)))
-models.append(('ABoost', AdaBoostClassifier()))
+#models.append(('ABoost', AdaBoostClassifier()))
 models.append(('KNN', KNeighborsClassifier()))
 models.append(('MLP', MLPClassifier()))
 
@@ -73,7 +73,7 @@ for name, model in models:
     accuracy.loc[cnt] = [name, acc, f1_mi, f1_ma, f1_we, recall_mi, recall_ma, recall_we, precision_mi, precision_ma, precision_we, delta]
     print('{}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.2f} secs'.format(name, acc, f1_mi, recall_mi, precision_mi, f1_ma, recall_ma, precision_ma, f1_we, recall_we, precision_we, delta))
     cnt += 1
-    matrix = open('/home/irteam/wendyunji-dcloud-dir/wendyunji/MLAC/Classification/Evaluation/Multi/Matrix/'+file[0]+'_'+name+'.txt','w')
+    matrix = open('/home/irteam/wendyunji-dcloud-dir/wendyunji/2023-1/MLAC/Workspace/230421/Matrix/'+file[0]+'_'+name+'.txt','w')
     matrix.write(str(confusion))            
 accuracy = accuracy.round(3)
-accuracy.to_csv('/home/irteam/wendyunji-dcloud-dir/wendyunji/MLAC/Classification/Evaluation/Multi/'+file[0]+'.csv',index=False)
+accuracy.to_csv('/home/irteam/wendyunji-dcloud-dir/wendyunji/2023-1/MLAC/Workspace/230421/'+file[0]+'.csv',index=False)
