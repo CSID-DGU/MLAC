@@ -14,7 +14,7 @@ models = classification_util.getModels()
 
 # 훈련 및 평가
 CICI_mb_X_train, CICI_mb_X_test, CICI_mb_y_train, CICI_mb_y_test =classification_util.TrainTestSplit('B', CICI_data)
-classification_util.BinaryClassification(file='CICI_mb', models=models, X_train = CICI_mb_X_train, X_test = CICI_mb_X_test, y_train = CICI_mb_y_train, y_test = CICI_mb_y_test)
+classification_util.BinaryClassification(dtype = 'CICI', file='CICI_mb', models=models, X_train = CICI_mb_X_train, X_test = CICI_mb_X_test, y_train = CICI_mb_y_train, y_test = CICI_mb_y_test)
 
 UNSW_mb_X_train, UNSW_mb_X_test, UNSW_mb_y_train, UNSW_mb_y_test =classification_util.TrainTestSplit('B', UNSW_data)
 classification_util.BinaryClassification(file='UNSW_mb', models=models, X_train = UNSW_mb_X_train, X_test = UNSW_mb_X_test, y_train = UNSW_mb_y_train, y_test = UNSW_mb_y_test)

@@ -1,0 +1,28 @@
+Dataset Split
+Binary Classification Dataset Split
+[0 1]
+Model	Acc	F1	Recall	Precision	Execution
+RF	0.972	0.858	0.763	0.980	29.21 secs
+DT	0.976	0.888	0.884	0.892	113.32 secs
+NB	0.863	0.506	0.646	0.416	3.00 secs
+LDA	0.962	0.817	0.779	0.860	26.03 secs
+QDA	0.970	0.871	0.929	0.821	7.56 secs
+LR	0.964	0.823	0.771	0.884	131.90 secs
+ABoost	0.974	0.872	0.802	0.955	1525.91 secs
+k-NN	0.991	0.957	0.967	0.948	40752.68 secs
+MLP	0.989	0.948	0.950	0.946	417.89 secs
+SVM	0.966	0.833	0.773	0.903	671.61 secs
+Dataset Split
+Binary Classification Dataset Split
+[0 1]
+Model	Acc	F1	Recall	Precision	Execution
+RF	0.883	0.404	0.253	1.000	10.65 secs
+DT	0.990	0.969	0.981	0.957	53.68 secs
+NB	0.851	0.092	0.048	1.000	7.38 secs
+LDA	0.985	0.955	0.975	0.935	65.02 secs
+QDA	0.851	0.092	0.048	1.000	23.72 secs
+LR	0.989	0.966	0.973	0.959	177.56 secs
+ABoost	0.991	0.971	0.974	0.968	768.00 secs
+k-NN	0.995	0.985	0.984	0.985	26681.43 secs
+MLP	0.994	0.982	0.973	0.991	334.67 secs
+SVM	0.989	0.967	0.975	0.959	102.95 secs

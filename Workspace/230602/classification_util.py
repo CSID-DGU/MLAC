@@ -36,13 +36,12 @@ def TrainTestSplit(type, data):
     if type == 'B':
         print('Binary Classification Dataset Split')
         target = data['label']
-    else:
+    elif type == 'N':
         # Remove Benign Data
         benign = data[data['label'] == 0].index
         data.drop(benign, inplace=True)
-        target = data['attack_category']
+        target = data['nist_category']
 
-    #data.drop(labels=['attack_category, label'], axis=1, inplace=True)
     del data['attack_category']
     del data['label']
     del data['nist_category']
@@ -108,7 +107,7 @@ Input : file name, model list(from getModels function), train&test set(from getD
 Output : Evaluation result as csv file, Confusion Matrix of each Model test
 Evaluation Result : accuracy, f1 score, recall, precision, excution time of each model
 """
-def BinaryClassification(file, models, X_train, X_test, y_train, y_test):
+def BinaryClassification(dtype, file, models, X_train, X_test, y_train, y_test):
     print(np.arange(len(y_train.value_counts())))
     accuracy = pd.DataFrame(columns=['Model','Acc','F1','Recall','Precision','Execution'])
     print('Model\tAcc\tF1\tRecall\tPrecision\tExecution')
@@ -129,11 +128,15 @@ def BinaryClassification(file, models, X_train, X_test, y_train, y_test):
         accuracy.loc[cnt] = [name, acc, f1, recall, precision, delta]
         print('{}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.2f} secs'.format(name, acc, f1, recall, precision, delta))
         cnt += 1
-        os.makedirs(os.getcwd()+'/Binary/Matrix',exist_ok=True)
         marks = np.arange(len(y_train.value_counts()))
-        plot_confusion_matrix(confusion,labels=marks,title=name,confusion_path=os.getcwd()+'/Binary/Matrix')           
+        if dtype == 'C':
+            os.makedirs(os.getcwd()+'/Matrix/MVSB/CICI',exist_ok=True)
+            plot_confusion_matrix(confusion,labels=marks,title=name,confusion_path=os.getcwd()+'/Matrix/MVSB/CICI')
+        elif dtype == 'U':
+            os.makedirs(os.getcwd()+'/Matrix/MVSB/UNSW',exist_ok=True)
+            plot_confusion_matrix(confusion,labels=marks,title=name,confusion_path=os.getcwd()+'/Matrix/MVSB/UNSW')               
     accuracy = accuracy.round(3)
-    accuracy.to_csv(os.getcwd()+file+'.csv',index=False)
+    accuracy.to_csv(os.getcwd()+'/Score/'+file+'.csv',index=False)
 
 
 """
@@ -141,7 +144,7 @@ Multiclass Classification
 Input : file name, model list(from getModels function), train&test set(from getData function)
 Output : Evaluation result as csv file, Confusion Matrix of each Model test
 """
-def MultiClassification(file, models, X_train, X_test, y_train, y_test):
+def MultiClassification(dtype, type, file, models, X_train, X_test, y_train, y_test):
     accuracy = pd.DataFrame(columns=['Model','Acc','F1_mi','Recall_mi','Precision_mi','F1_ma','Recall_ma','Precision_ma','F1_we','Recall_we','Precision_we','Execution'])
     print('Model\tAcc\tF1_mi\tRecall_mi\tPrecision_mi\tF1_ma\tRecall_ma\tPrecision_ma\tF1_we\tRecall_we\tPrecision_we\tExecution')
     cnt = 0
@@ -165,11 +168,17 @@ def MultiClassification(file, models, X_train, X_test, y_train, y_test):
         confusion = metrics.confusion_matrix(y_test, prediction)
         # 저장
         accuracy.loc[cnt] = [name, acc, f1_mi, f1_ma, f1_we, recall_mi, recall_ma, recall_we, precision_mi, precision_ma, precision_we, delta]
-        print('{}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.2f} secs'.format(name, acc, f1_mi, recall_mi, precision_mi, f1_ma, recall_ma, precision_ma, f1_we, recall_we, precision_we, delta))
+        print('{}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.2f} secs'.format(name, acc, f1_mi, f1_ma, f1_we, recall_mi, recall_ma, recall_we, precision_mi, precision_ma, precision_we, delta))
         cnt += 1
-        matrix = open('/home/irteam/wendyunji-dcloud-dir/wendyunji/2023-1/MLAC/Classification/result/230330/matrix/'+file+'_'+name+'.txt','w')
-        matrix.write(str(confusion))            
+        marks = np.arange(len(y_train.value_counts()))
+        if type == 'N':
+            if dtype == 'C':
+                os.makedirs(os.getcwd()+'/Matrix/NIST/CICI',exist_ok=True)
+                plot_confusion_matrix(confusion,labels=marks,title=name,confusion_path=os.getcwd()+'/Matrix/NIST/CICI')
+            elif dtype == 'U':
+                os.makedirs(os.getcwd()+'/Matrix/NIST/UNSW',exist_ok=True)
+                plot_confusion_matrix(confusion,labels=marks,title=name,confusion_path=os.getcwd()+'/Matrix/NIST/UNSW')     
     accuracy = accuracy.round(3)
-    accuracy.to_csv('/home/irteam/wendyunji-dcloud-dir/wendyunji/2023-1/MLAC/Classification/result/230330/'+file+'.csv',index=False)
+    accuracy.to_csv(os.getcwd()+'/Score/'+file+'.csv',index=False)
 
     
