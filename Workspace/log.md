@@ -4,4 +4,8 @@
 
 
 #### 6월 1주(05/27~06/02)
-230528 : Malcious VS Benign 결과확인
+|  DAY  | CONTENTS    |
+|--- |----- |  
+| 230528  | Malcious VS Benign 결과확인 |
+| 230529 | NIST Standard 결과확인 |
+| 230530 | Full Attack 결과확인 |

@@ -37,14 +37,19 @@ def TrainTestSplit(type, data):
         print('Binary Classification Dataset Split')
         target = data['label']
     elif type == 'N':
+        print('NIST Standard Classification Dataset Split')
         # Remove Benign Data
         benign = data[data['label'] == 0].index
         data.drop(benign, inplace=True)
         target = data['nist_category']
+    elif type == 'F':
+        print('Full attack Classification Dataset Split')
+        target = data['attack_category']
 
     del data['attack_category']
     del data['label']
     del data['nist_category']
+    
     X_train, X_test, y_train, y_test = train_test_split(data, target, test_size=0.3, shuffle=True, stratify=target, random_state=34)
     return X_train, X_test, y_train, y_test
 
@@ -178,6 +183,15 @@ def MultiClassification(dtype, type, file, models, X_train, X_test, y_train, y_t
             elif dtype == 'U':
                 os.makedirs(os.getcwd()+'/Matrix/NIST/UNSW',exist_ok=True)
                 plot_confusion_matrix(confusion,labels=marks,title=name,confusion_path=os.getcwd()+'/Matrix/NIST/UNSW')     
+                
+        if type == 'F':
+            if dtype == 'C':
+                os.makedirs(os.getcwd()+'/Matrix/FULL/CICI',exist_ok=True)
+                plot_confusion_matrix(confusion,labels=marks,title=name,confusion_path=os.getcwd()+'/Matrix/FULL/CICI')
+            elif dtype == 'U':
+                os.makedirs(os.getcwd()+'/Matrix/FULL/UNSW',exist_ok=True)
+                plot_confusion_matrix(confusion,labels=marks,title=name,confusion_path=os.getcwd()+'/Matrix/FULL/UNSW') 
+                
     accuracy = accuracy.round(3)
     accuracy.to_csv(os.getcwd()+'/Score/'+file+'.csv',index=False)
 
