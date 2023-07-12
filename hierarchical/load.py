@@ -17,7 +17,7 @@ def create_pipeline(model):
 
 
 def test_result(model:str,test,pred) ->list:
-
+    
     acc=accuracy_score(test,pred)
     f1=f1_score(test,pred,average='weighted')
     recall=recall_score(test,pred,average='weighted')
