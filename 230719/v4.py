@@ -39,7 +39,7 @@ y_test=pd.read_csv(os.path.join(cici_test_dir,'y_test.csv'))
 df=pd.DataFrame(columns=['L1_acc','L1_f1','L1_rc','L1_pc','L2_acc','L2_f1','L2_rc','L2_pc']+\
                  ['c1_acc','c1_f1','c1_rc','c1_pc']+\
                     ['c2_acc','c2_f1','c2_rc','c2_pc','c3_acc','c3_f1','c3_rc','c3_pc','c4_acc','c4_f1','c4_rc','c4_pc']+\
-                     ['total_acc','total_f1','total_rc','total_pc'])
+                     ['c5_acc','c5_f1','c5_rc','c5_pc','total_acc','total_f1','total_rc','total_pc'])
 
 cnt=0
 model_eval=[]
@@ -62,7 +62,10 @@ c3_ytest=c3_Xtest['attack_category']
 c4_Xtest=X_test.query('nist_category4==4')
 c4_ytest=c4_Xtest['attack_category']
 
-for class_data in [c1_Xtest,c2_Xtest,c3_Xtest,c4_Xtest]:
+c5_Xtest=X_test.query('nist_category4==5')
+c5_ytest=c5_Xtest['attack_category']
+
+for class_data in [c1_Xtest,c2_Xtest,c3_Xtest,c4_Xtest,c5_Xtest]:
     class_data.drop(labels=['Unnamed: 0','attack_category','nist_category','nist_category4'],axis=1,inplace=True)
 
 X_test.drop(labels=['Unnamed: 0','nist_category','attack_category','nist_category4'],axis=1,inplace=True)
@@ -128,6 +131,7 @@ class_models = [
     joblib.load(os.path.join(saved_path, 'class_2_CICI.pkl')),
     joblib.load(os.path.join(saved_path, 'class_3_CICI.pkl')),
     joblib.load(os.path.join(saved_path, 'class_4_CICI.pkl'))
+
 ]
 
 class_names = ['Reconnaissance', 'Access', 'Dos', 'Malware']
@@ -165,7 +169,26 @@ for class_index,class_model in enumerate(class_models):
     else:
         model_eval.extend([0,0,0,0])
 
+# Generic result
+indices=np.where(L2_ypred==5)
+print('Generic test')
+y_test_selected=L3_ytest_selected.iloc[indices]
+y_pred=np.array([5 for i in range(len(y_test_selected))])
+result=test_result('Generic',y_test_selected,y_pred)
 
+# Generic result save
+f=open(progressLog_path,'a')
+f.write('Generic'+','.join(map(str,result))+'\n')
+f.close()
+
+model_eval.extend(result)
+class_encodings['Generic'].extend(y_pred)
+class_encodings['Generic'].extend(y_test_selected)
+
+final_y_pred.extend(y_pred)
+final_y_test.extend(y_test_selected)
+
+# benign result
 final_y_pred.extend(L1_b_ypred)
 final_y_test.extend(L1_b_ytest.label.values)
 
