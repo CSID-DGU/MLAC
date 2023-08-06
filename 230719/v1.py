@@ -167,8 +167,8 @@ plot_confusion_matrix(confusion,labels=[0,1],title='Layer1')
 malicious_indices=np.where(L1_ypred==1)[0]
 
 # 최종 결과를 위해 저장
-L1_b_ypred=[L1_ypred[i] for i in range(len(L1_ypred)) if i not in malicious_indices]
-L1_b_ytest=[L1_ytest[i] for i in range(len(L1_ytest)) if i not in malicious_indices]
+L1_b_ypred=L1_ypred[L1_ypred==0]
+L1_b_ytest=L1_ytest[~np.isin(np.arange(L1_ytest.shape[0]),malicious_indices)]
 
 
 if malicious_indices.any():
@@ -243,7 +243,7 @@ for class_index,class_model in enumerate(class_models):
 
 
 final_y_pred.extend(L1_b_ypred)
-final_y_test.extend(L1_b_ytest)
+final_y_test.extend(L1_b_ytest.label.values)
 
 
 final_result = test_result('Layer3', final_y_test, final_y_pred)
