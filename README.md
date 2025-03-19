@@ -1,4 +1,2 @@
 # MLAC
-Machine Learning Access Control
-
-Machine Learning Access Control example
+Moved repository to https://github.com/CSID-DGU/Hi-MLIC
